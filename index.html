@@ -360,34 +360,19 @@
   .tl-ach{font-size:0.8rem;color:var(--muted);display:flex;align-items:flex-start;gap:0.45rem;}
   .tl-ach::before{content:'▸';color:var(--accent);flex-shrink:0;margin-top:1px;}
 
-  /* CONTACT */
-  .contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start;}
-  .cf-form{display:flex;flex-direction:column;gap:1.1rem;}
-  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.9rem;}
-  .fg{display:flex;flex-direction:column;gap:0.35rem;}
-  .fg label{font-size:0.78rem;color:var(--muted);letter-spacing:0.03em;}
-  .fg input,.fg textarea,.fg select{background:var(--card);border:1px solid var(--border);border-radius:var(--radius-sm);padding:0.75rem 0.95rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:0.88rem;transition:border-color 0.2s;outline:none;width:100%;resize:none;}
-  .fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--accent);}
-  .fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
-  .ci-item{display:flex;align-items:flex-start;gap:1rem;}
-  .ci-icon{width:42px;height:42px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;}
-  .ci-lbl{font-size:0.73rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.18rem;}
-  .ci-val{font-size:0.92rem;font-weight:500;}
-  .soc-grid{display:flex;gap:0.7rem;margin-top:0.9rem;}
+
 
   footer{padding:1.8rem 3rem;border-top:1px solid rgba(255,255,255,0.06);background:rgba(1,3,10,0.7);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:space-between;position:relative;z-index:1;}
   .footer-copy{font-size:0.78rem;color:var(--muted);}
   .footer-top{font-size:0.78rem;color:var(--muted);text-decoration:none;transition:color 0.2s;}
   .footer-top:hover{color:var(--text);}
-  .toast{position:fixed;bottom:2rem;right:2rem;background:var(--card);border:1px solid var(--accent3);border-radius:var(--radius-sm);padding:0.85rem 1.3rem;font-size:0.88rem;color:var(--accent3);z-index:999;transform:translateY(100px);opacity:0;transition:all 0.3s;display:flex;align-items:center;gap:0.45rem;}
-  .toast.show{transform:translateY(0);opacity:1;}
+
 
   @media(max-width:900px){
     nav{padding:1rem 1.5rem;}.nav-links{display:none;}
     #hero{padding:7rem 1.5rem 3rem;}.hero-visual{display:none;}
     section{padding:3.5rem 1.5rem;}
-    .about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem;}
-    .form-row{grid-template-columns:1fr;}
+    .about-grid{grid-template-columns:1fr;gap:2rem;}
     .hero-stats{gap:1.5rem;flex-wrap:wrap;}
     footer{padding:1.4rem 1.5rem;flex-direction:column;gap:0.5rem;text-align:center;}
   }
@@ -415,7 +400,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#contact" class="nav-cta">Hire Me ↗</a></li>
+    <li><a href="mailto:balajiraju738@gmail.com" class="nav-cta">Hire Me ↗</a></li>
   </ul>
 </nav>
 
@@ -434,7 +419,7 @@
     </p>
     <div class="hero-actions">
       <a href="#projects" class="btn-primary">View Projects →</a>
-      <a href="#contact" class="btn-secondary">Get in Touch</a>
+      <a href="mailto:balajiraju738@gmail.com" class="btn-secondary">Get in Touch ✉</a>
     </div>
     <div class="hero-stats">
       <div><span class="stat-num">18+</span><p class="stat-label">Months Experience</p></div>
@@ -636,79 +621,12 @@
   </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="alt-bg">
-  <div class="inner contact-grid">
-    <div>
-      <div class="sec-label">Get In Touch</div>
-      <h2 class="sec-title">Let's build something<br><span class="grad">with data.</span></h2>
-      <p style="font-size:0.95rem;color:var(--muted);font-weight:300;max-width:440px;margin-bottom:2.2rem;line-height:1.75">Open to new data engineering roles, freelance data projects, or just a conversation about pipelines, LLMs, and OCR.</p>
-      <form class="cf-form" onsubmit="handleSubmit(event)">
-        <div class="form-row">
-          <div class="fg"><label>First Name</label><input type="text" placeholder="Your name" required></div>
-          <div class="fg"><label>Last Name</label><input type="text" placeholder="Last name" required></div>
-        </div>
-        <div class="fg"><label>Email</label><input type="email" placeholder="you@company.com" required></div>
-        <div class="fg">
-          <label>What are you looking for?</label>
-          <select>
-            <option value="">Select...</option>
-            <option>Data Engineering Role</option>
-            <option>Freelance Data Project</option>
-            <option>LLM / OCR Integration</option>
-            <option>Data Pipeline Consulting</option>
-            <option>Just Networking</option>
-          </select>
-        </div>
-        <div class="fg"><label>Message</label><textarea rows="5" placeholder="Tell me about your data challenge or project..." required></textarea></div>
-        <button type="submit" class="btn-primary" style="align-self:flex-start;min-width:160px;">Send Message →</button>
-      </form>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:2rem">
-      <div>
-        <p style="font-size:0.75rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.1rem">Contact Details</p>
-        <div style="display:flex;flex-direction:column;gap:1.1rem">
-          <div class="ci-item">
-            <div class="ci-icon" style="background:rgba(14,165,233,0.1)">📧</div>
-            <div><p class="ci-lbl">Email</p><p class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bf8f3fef5fffaf7e9faf1eedbfef6faf2f7b5f8f4f6">[email&#160;protected]</a></p></div>
-          </div>
-          <div class="ci-item">
-            <div class="ci-icon" style="background:rgba(6,214,160,0.1)">📍</div>
-            <div><p class="ci-lbl">Location</p><p class="ci-val">Hyderabad, India · Open to Remote</p></div>
-          </div>
-          <div class="ci-item">
-            <div class="ci-icon" style="background:rgba(251,191,36,0.1)">🏢</div>
-            <div><p class="ci-lbl">Current Company</p><p class="ci-val">Bluecopa · Junior Data Engineer</p></div>
-          </div>
-        </div>
-      </div>
-      <div>
-        <p style="font-size:0.75rem;color:var(--muted);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:0.9rem">Find Me Online</p>
-        <div class="soc-grid">
-          <a class="soc-btn" title="GitHub">🐙</a>
-          <a class="soc-btn" title="LinkedIn">💼</a>
-          <a class="soc-btn" title="Twitter">🐦</a>
-        </div>
-      </div>
-      <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.3rem">
-        <p style="font-size:0.72rem;color:var(--accent2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:0.45rem">Current Status</p>
-        <p style="font-size:0.97rem;font-weight:500;margin-bottom:0.28rem">Open to Opportunities</p>
-        <p style="font-size:0.8rem;color:var(--muted);font-weight:300">Looking for data engineering roles working on real-world pipelines and AI-powered data systems.</p>
-        <div style="margin-top:0.9rem;display:flex;align-items:center;gap:0.45rem;font-size:0.76rem;color:var(--accent3)">
-          <span style="width:6px;height:6px;background:var(--accent3);border-radius:50%;display:inline-block;animation:pulse 2s infinite"></span>
-          18 months · Bluecopa · Hyderabad
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="footer-copy">© 2026 Chendal Raju Balaji Mohan Raju · Junior Data Engineer · Bluecopa</div>
   <a href="#hero" class="footer-top">Back to top ↑</a>
 </footer>
 
-<div class="toast" id="toast">✓ Message sent! I'll reply soon.</div>
+
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   window.addEventListener('scroll', () => {
@@ -737,16 +655,7 @@
     co.observe(c);
   });
 
-  function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button');
-    btn.textContent = 'Sending...'; btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = 'Send Message →'; btn.disabled = false; e.target.reset();
-      const t = document.getElementById('toast'); t.classList.add('show');
-      setTimeout(() => t.classList.remove('show'), 3400);
-    }, 1100);
-  }
+
 
   const secs = document.querySelectorAll('section[id]');
   window.addEventListener('scroll', () => {
@@ -757,10 +666,11 @@
     });
   });
 
-  /* ========== MINIMAL ORB MOUSE INTERACTION ========== */
+  /* ========== MINIMAL ORB MOUSE INTERACTION (optimized) ========== */
   (function(){
     const orbs = document.querySelectorAll('.bg-orb');
     let mx = window.innerWidth/2, my = window.innerHeight/2;
+    let ticking = false;
     document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
     function nudge(){
       orbs.forEach((orb, i) => {
@@ -769,8 +679,7 @@
         const cy = rect.top + rect.height/2;
         const dx = (mx - cx) * 0.008 * (i % 2 === 0 ? 1 : -1);
         const dy = (my - cy) * 0.008 * (i % 2 === 0 ? -1 : 1);
-        orb.style.marginLeft = dx + 'px';
-        orb.style.marginTop = dy + 'px';
+        orb.style.transform = `translate(${dx}px, ${dy}px)`;
       });
       requestAnimationFrame(nudge);
     }
@@ -788,13 +697,13 @@
 
     document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; });
 
-    /* ── COMET TRAIL ── */
-    const TRAIL = 14;
+    /* ── COMET TRAIL (optimized: 6 particles) ── */
+    const TRAIL = 6;
     const trails = [];
     const mouseHistory = [];
     for(let i=0;i<TRAIL;i++){
       const t=document.createElement('div');
-      t.style.cssText='position:fixed;border-radius:50%;pointer-events:none;z-index:9996;transform:translate(-50%,-50%);';
+      t.style.cssText='position:fixed;border-radius:50%;pointer-events:none;z-index:9996;will-change:transform,opacity;';
       document.body.appendChild(t);
       trails.push({el:t, x:0, y:0});
     }
@@ -839,7 +748,7 @@
 
     /* ── CLICK SPARK ── */
     document.addEventListener('click',e=>{
-      for(let i=0;i<6;i++){
+      for(let i=0;i<3;i++){
         const spark=document.createElement('div');
         const angle=Math.random()*Math.PI*2;
         const dist=Math.random()*30+15;
@@ -867,7 +776,7 @@
       ring.style.left=ringX+'px';
       ring.style.top=ringY+'px';
 
-      // comet trail
+      // comet trail (optimized with transform)
       for(let i=0;i<TRAIL;i++){
         const hist=mouseHistory[mouseHistory.length-1-Math.floor(i*(mouseHistory.length/TRAIL))];
         if(!hist) continue;
@@ -876,14 +785,12 @@
         tr.y+=(hist.y-tr.y)*0.15;
         const alpha=(1-i/TRAIL)*0.65*(isHovering?1.4:1);
         const size=Math.max(0,(7*(1-i/TRAIL)));
-        tr.el.style.left=tr.x+'px'; tr.el.style.top=tr.y+'px';
+        tr.el.style.transform=`translate(${tr.x-size/2}px,${tr.y-size/2}px)`;
         tr.el.style.width=size+'px'; tr.el.style.height=size+'px';
         tr.el.style.opacity=alpha;
         tr.el.style.background=i%2===0
           ?`rgba(56,189,248,${alpha})`
           :`rgba(6,214,160,${alpha})`;
-        tr.el.style.boxShadow=size>2
-          ?`0 0 ${size*3}px rgba(56,189,248,${alpha*0.8})`:'none';
       }
       requestAnimationFrame(animateCursor);
     }
