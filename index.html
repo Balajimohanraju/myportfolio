@@ -47,19 +47,24 @@
     will-change:left,top;
   }
 
-  /* ── MINIMAL FLOATING ORB BACKGROUND (lightweight) ── */
-  #bg-orbs{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
-  .bg-orb{
-    position:absolute;border-radius:50%;
-    filter:blur(40px);
+  /* ── MATURE AURORA BACKGROUND ── */
+  #bg-aurora{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden;background:#010208;}
+  .aurora-layer{
+    position:absolute;
+    width:150vw;height:150vh;
+    top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    background:
+      radial-gradient(circle at 50% 50%, rgba(14,165,233,0.05) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, rgba(139,92,246,0.04) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, rgba(6,214,160,0.03) 0%, transparent 50%);
+    filter:blur(60px);
+    animation:auroraSpin 40s linear infinite;
     will-change:transform;
-    animation:orbFloat 25s ease-in-out infinite;
   }
-  .bg-orb:nth-child(1){width:400px;height:400px;background:radial-gradient(circle,rgba(14,165,233,0.10),transparent 70%);top:8%;left:12%;opacity:0.6;}
-  .bg-orb:nth-child(2){width:320px;height:320px;background:radial-gradient(circle,rgba(6,214,160,0.08),transparent 70%);top:55%;right:8%;animation-delay:-8s;opacity:0.5;}
-  @keyframes orbFloat{
-    0%,100%{transform:translate(0,0);}
-    50%{transform:translate(20px,-20px);}
+  @keyframes auroraSpin{
+    0%{transform:translate(-50%,-50%) rotate(0deg);}
+    100%{transform:translate(-50%,-50%) rotate(360deg);}
   }
   ::-webkit-scrollbar{width:4px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px;}
 
@@ -71,22 +76,7 @@
   .nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:1px;background:var(--accent2);transform:scaleX(0);transition:transform 0.2s;}
   .nav-links a:hover{color:var(--text);}
   .nav-links a:hover::after{transform:scaleX(1);}
-  .nav-cta{
-    position:relative;overflow:hidden;
-    background:linear-gradient(135deg,rgba(14,165,233,0.25),rgba(6,214,160,0.15)) !important;
-    backdrop-filter:blur(20px) saturate(180%) !important;
-    -webkit-backdrop-filter:blur(20px) saturate(180%) !important;
-    color:#fff !important;
-    padding:0.45rem 1.2rem;border-radius:100px;
-    font-size:0.82rem !important;font-weight:500 !important;
-    border:1px solid rgba(255,255,255,0.28) !important;
-    box-shadow:0 2px 16px rgba(14,165,233,0.2),inset 0 1px 0 rgba(255,255,255,0.35),inset 0 -1px 0 rgba(0,0,0,0.15) !important;
-    transition:all 0.3s !important;
-  }
-  .nav-cta::before{content:'';position:absolute;top:0;left:-60%;width:50%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent);transform:skewX(-20deg);transition:left 0.5s ease;}
-  .nav-cta:hover::before{left:120%;}
-  .nav-cta:hover{transform:translateY(-1px) !important;box-shadow:0 6px 28px rgba(14,165,233,0.35),inset 0 1px 0 rgba(255,255,255,0.4),inset 0 -1px 0 rgba(0,0,0,0.1) !important;}
-  .nav-cta::after{display:none !important;}
+
 
   /* HERO */
   #hero{min-height:100vh;display:flex;align-items:center;padding:8rem 3rem 4rem;position:relative;overflow:hidden;background:transparent;}
@@ -355,10 +345,9 @@
 </head>
 <body>
 
-<!-- MINIMAL FLOATING ORB BACKGROUND -->
-<div id="bg-orbs">
-  <div class="bg-orb"></div>
-  <div class="bg-orb"></div>
+<!-- MATURE AURORA BACKGROUND -->
+<div id="bg-aurora">
+  <div class="aurora-layer"></div>
 </div>
 
 <!-- CUSTOM CURSOR -->
@@ -374,7 +363,6 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#architecture">Architecture</a></li>
-    <li><a href="mailto:balajiraju738@gmail.com" class="nav-cta">Hire Me ↗</a></li>
   </ul>
 </nav>
 
@@ -906,7 +894,7 @@
     document.addEventListener('mousemove',e=>{ mx=e.clientX; my=e.clientY; });
 
     /* ── HOVER STATES (lightweight) ── */
-    document.querySelectorAll('a,button,.skill-card,.proj-card,.nav-cta,.soc-btn,.icon-btn,.btn-primary').forEach(el=>{
+    document.querySelectorAll('a,button,.skill-card,.proj-card,.soc-btn,.icon-btn,.btn-primary').forEach(el=>{
       el.addEventListener('mouseenter',()=>{
         dot.style.width='16px'; dot.style.height='16px';
         dot.style.background='#06d6a0';
